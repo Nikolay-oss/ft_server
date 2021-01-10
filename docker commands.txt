@@ -1,0 +1,5 @@
+docker run -it --rm -d -p 1234:80 --name web nginx
+docker stop web
+docker ps -a
+
+Ip  192.168.99.100
