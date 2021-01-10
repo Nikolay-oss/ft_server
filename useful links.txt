@@ -8,3 +8,6 @@ https://linuxize.com/post/redirect-http-to-https-in-nginx/
 https://www.digitalocean.com/community/tools/nginx
 https://www.binarytides.com/install-nginx-php-fpm-mariadb-debian/
 https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+https://www.leaderssl.ru/articles/207-vse-pro-openssl-za-5-minut
+https://www.techrepublic.com/article/how-to-enable-ssl-on-nginx/
+https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-18-04
