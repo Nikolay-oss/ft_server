@@ -1,22 +1,28 @@
 server {
-	listen 80;
-	listen [::]:80;
-	server_name dkenchur_server;
-	return 301 https://$host$request_uri;
-	#root /var/www/dkenchur_server;
-	#index index.html index.htm ex.html;
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name dkenchur www.dkenchur;
+	return 301 https://$server_name$request_uri;
+	# root /var/www/dkenchur_server;
+	# index index.html index.htm ex.html;
 
-	#location / {
-	#	try_files $uri $uri/ =404;
-	#}
+	# location / {
+	# 	try_files $uri $uri/ =404;
+	# }
 }
 
 server {
 	listen 443 ssl;
 	listen [::]:443 ssl;
-	server_name dkenchur_server;
+	root /var/www/dkenchur_server;
+	index index.html index.htm ex.html;
+	server_name dkenchur www.dkenchur;
 
+	ssl on;
 	ssl_certificate /etc/ssl/certs/nginx_server.crt;
-	ssl_certificate_key /etc/ssl/private/nginx_server.key;
-	
+	ssl_certificate_key /etc/ssl/certs/nginx_server.key;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
 }
