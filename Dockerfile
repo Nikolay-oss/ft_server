@@ -2,9 +2,11 @@ FROM debian:buster
 
 RUN apt-get update
 RUN apt-get install nginx -y
-# RUN apt-get install mariadb-server -y
+RUN apt-get install mariadb-server -y
 RUN apt-get install php-fpm php-mysql -y
-RUN apt-get install openssl -y
+RUN apt-get install wget -y
+# RUN apt-get install openssl -y
+RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
 
 COPY ./srcs/initial.sh ./
 COPY ./srcs/index.html ./

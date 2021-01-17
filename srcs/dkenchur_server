@@ -1,8 +1,8 @@
 server {
 	listen 80;
 	listen [::]:80;
-	server_name dkenchur_server www.dkenchur_server;
-	return 301 https://$server_name$request_uri;
+	server_name dkenchur_server; #www.dkenchur_server;
+	return 301 https://$host$request_uri;
 	
 }
 
@@ -13,11 +13,12 @@ server {
 
 	root /var/www/dkenchur_server;
 	index index.php index.html index.htm;
-	server_name dkenchur_server www.dkenchur_server;
+	# index index.html index.htm;
+	server_name dkenchur_server; #www.dkenchur_server;
 
 	# ssl on;
-	ssl_certificate /etc/ssl/certs/nginx_server.crt;
-	ssl_certificate_key /etc/ssl/certs/nginx_server.key;
+	ssl_certificate /mkcert/dkenchur_server.pem;
+	ssl_certificate_key /mkcert/dkenchur_server-key.pem;
 
 	# root /var/www/dkenchur_server;
 	# # index index.html index.htm ex.html index.php info.php;
