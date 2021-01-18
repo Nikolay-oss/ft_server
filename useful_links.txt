@@ -1,0 +1,16 @@
+https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/
+https://hub.docker.com/_/nginx
+https://www.youtube.com/watch?v=I18TNwZ2Nqg
+https://blog.maddevs.io/docker-for-beginners-a2c9c73e7d3d
+https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts
+https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/
+https://linuxize.com/post/redirect-http-to-https-in-nginx/
+https://www.digitalocean.com/community/tools/nginx
+https://www.binarytides.com/install-nginx-php-fpm-mariadb-debian/
+https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+
+https://github.com/vvarodi/ft_server
+https://certificatechain.io/
+
+https://www.codeflow.site/ru/article/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10
+https://github.com/matboivin/ft_server
