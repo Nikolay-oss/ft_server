@@ -22,6 +22,11 @@ RUN cd /tmp/myfiles &&\
 	wget https://files.phpmyadmin.net/phpMyAdmin/4.9.7/phpMyAdmin-4.9.7-all-languages.tar.gz &&\
 	cd /
 
+# wordpress
+RUN cd /tmp/myfiles &&\
+	curl -LO https://wordpress.org/latest.tar.gz &&\
+	cd /
+
 # copy files
 COPY ./srcs/initial.sh /tmp/myfiles
 COPY ./srcs/nginx.conf /tmp/myfiles
@@ -32,6 +37,7 @@ COPY ./srcs/db_config.sh /tmp/myfiles
 COPY ./srcs/wp-config.php /tmp/myfiles
 COPY ./srcs/config.inc.php /tmp/myfiles
 COPY ./srcs/myadmin_config.sh /tmp/myfiles
+COPY ./srcs/autoindex.sh /tmp/myfiles
 
 CMD bash /tmp/myfiles/initial.sh
 

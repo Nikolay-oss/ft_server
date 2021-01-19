@@ -1,18 +1,19 @@
 #!/bin/bash
 
+cd /etc/nginx/sites-available
+
 buf=$(grep "autoindex off;" dkenchur_server)
-echo "$buf"
 
 if [ "$buf" == "		autoindex off;" ]; then
-echo "1"
-    # sed 's/autoindex off/autoindex on/g' dkenchur_server > dkenchur_server
+    sed 's/autoindex off;/autoindex on;/' dkenchur_server > idx_on
+	mv idx_on dkenchur_server
+	echo "autoindex on"
 else
-echo "2"
-    # sed 's/autoindex on/autoindex off/g' dkenchur_server > dkenchur_server
+    sed 's/autoindex on;/autoindex off;/' dkenchur_server > idx_off
+	mv idx_off dkenchur_server
+	echo "autoindex off"
 fi
 
-echo "$buf" | cat -e
-# echo $?
-# if [grep "autoindex off" dkenchur_server]; then
-# 	sed 's/autoindex off/autoindex on/g'
-# fi
+cd /
+
+service nginx restart
