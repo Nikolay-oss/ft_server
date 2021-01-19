@@ -3,42 +3,28 @@ server {
 	listen [::]:80;
 	root /var/www/dkenchur_server;
 	index index.php index.html index.htm;
-	# index index.html index.htm;
 	server_name dkenchur_server; #www.dkenchur_server;
-	# location / {
-	# 	try_files $uri $uri/ =404;
-	# }
-
-	# location ~ \.php$ {
-	# 	include snippets/fastcgi-php.conf;
-	
-	# 	# With php-fpm (or other unix sockets):
-	# 	fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
-	# 	# With php-cgi (or other tcp sockets):
-	# 	# fastcgi_pass 127.0.0.1:9000;
-	# }
 	return 301 https://$host$request_uri;
 }
 
 server {
 	listen 443 ssl;
 	listen [::]:443 ssl;
-	# include snippets/ssl_params.conf;
 
 	root /var/www/dkenchur_server;
 	index index.php index.html index.htm;
-	# index index.html index.htm;
 	server_name dkenchur_server; #www.dkenchur_server;
 
-	# ssl on;
 	ssl_certificate /tmp/certs/dkenchur_server.pem;
 	ssl_certificate_key /tmp/certs/dkenchur_server-key.pem;
 
-	# root /var/www/dkenchur_server;
-	# # index index.html index.htm ex.html index.php info.php;
-	# index index.php index.html index.htm;
-
 	location / {
+		# включает автоматическую индексацию Nginx для просмотра ваших файлов в веб-браузере.
+		autoindex on;
+		# эта опция покажет вам размеры файлов, указанные в КБ, МБ или ГБ.
+		autoindex_exact_size off;
+		# это покажет вам время файла.
+		autoindex_localtime on;
 		try_files $uri $uri/ =404;
 	}
 
