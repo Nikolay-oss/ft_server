@@ -24,25 +24,23 @@ if [ -n "$1" ]
 then
 	if [ $1 == "on" ]
 	then
-		buf=$(grep "autoindex off;" dkenchur_server)
-		if [ $? == 0 ]
+		if grep -q "autoindex off;" dkenchur_server
 		then
 			sed -i 's/autoindex off;/autoindex on;/' dkenchur_server
 			echo "autoindex on"
 			service nginx restart
 		else
-			echo "auto index is already enabled"
+			echo "autoindex is already enabled"
 		fi
 	elif [ $1 == "off" ]
 	then
-		buf=$(grep "autoindex on;" dkenchur_server)
-		if [ $? == 0 ]
+		if grep -q "autoindex on;" dkenchur_server
 		then
 			sed -i 's/autoindex on;/autoindex off;/' dkenchur_server
 			echo "autoindex off"
 			service nginx restart
 		else
-			echo "auto index is already disabled"
+			echo "autoindex is already disabled"
 		fi
 	else
 		print_error
