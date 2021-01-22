@@ -15,8 +15,8 @@ server {
 	index index.php index.html index.htm;
 	server_name dkenchur_server; #www.dkenchur_server;
 
-	ssl_certificate /tmp/certs/dkenchur_server.pem;
-	ssl_certificate_key /tmp/certs/dkenchur_server-key.pem;
+	ssl_certificate_key /etc/ssl/private/dkenchur_server.key;
+	ssl_certificate /etc/ssl/certs/dkenchur_server.crt;
 
 	location / {
 		# включает автоматическую индексацию Nginx для просмотра ваших файлов в веб-браузере.

@@ -8,6 +8,4 @@ bash /tmp/myfiles/wp_config.sh
 bash /tmp/myfiles/myadmin_config.sh
 bash /tmp/myfiles/db_config.sh
 
-service mysql reload
-
 bash
